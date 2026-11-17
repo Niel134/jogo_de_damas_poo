@@ -33,4 +33,8 @@ public abstract class Peca {
 	public Peca promoverPeca() {
 		return this;
 	}
+	
+	// polimorfismo: cada tipo de peça implementa os métodos seguintes da sua própria forma
+	public abstract String getSimbolo();
+	
 }
