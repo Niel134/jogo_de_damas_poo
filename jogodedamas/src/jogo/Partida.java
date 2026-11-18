@@ -23,6 +23,18 @@ public class Partida {
 		this.sequenciasEmAndamento = null;
 	}
 	
+	
+	// metodo para facilitar a criação de uma nova partida. Recebe o nome dos jogadores e isntancia os dois, assim como instancia o tabuleiro e retorna um novo objeto de partida
+	public static Partida iniciarNovaPartida(String nomeBrancas, String nomePretas) {
+        Jogador branca = new Jogador(nomeBrancas, Cor.BRANCA);
+        Jogador preta = new Jogador(nomePretas, Cor.PRETA);
+
+        Tabuleiro novoTabuleiro = new Tabuleiro();
+        novoTabuleiro.inicializarTabuleiro();
+
+        return new Partida(branca, preta, StatusPartida.EM_ANDAMENTO, Cor.BRANCA, novoTabuleiro);
+    }
+	
 	public void realizarMovimento(Movimento movimento) throws JogadaInvalidaException {
 		// TODO (Integrante 3): Implementar validação, captura múltipla, promoção e vitória.
 		throw new JogadaInvalidaException("Movimentação ainda não implementada.");
